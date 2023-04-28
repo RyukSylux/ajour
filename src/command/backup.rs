@@ -95,6 +95,12 @@ pub fn backup(
                         src_folders.push(screenshots_folder);
                     }
                 }
+                BackupFolder::Both => {
+                    if screenshot_directory.exists() {
+                        src_folders.push(wtf_folder);
+                        src_folders.push(addons_folder);
+                    }
+                }
                 _ => {}
             }
         }
